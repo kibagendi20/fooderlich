@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'card1.dart';
+import 'card2.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,14 +14,9 @@ class _HomeState extends State<Home> {
   //TODO: Add state variables and functions
   int _selectedIndex = 0;
 
-  List<Widget> pages = <Widget>[
-    // ignore: todo
-    // TODO: Replace with Card1
-    Container(
-      color: Colors.red,
-    ),
-    // ignore: todo
-    // TODO: Replace with Card2
+  static List<Widget> pages = <Widget>[
+    const Card1(),
+    const Card2(),
     Container(
       color: Colors.green,
     ),
@@ -43,15 +40,10 @@ class _HomeState extends State<Home> {
           'Fooderlich',
           style: Theme.of(context).textTheme.headline6,
         ),
+        centerTitle: true,
       ),
       //TODO: Show selected tab
       body: pages[_selectedIndex],
-      // Center(
-      //   child: Text(
-      //     'Let\'s get cooking',
-      //     style: Theme.of(context).textTheme.headline2,
-      //   ),
-      // ),
       //Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor:
